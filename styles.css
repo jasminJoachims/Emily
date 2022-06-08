@@ -1,0 +1,17 @@
+body{
+  background-color:#A5BECC;
+  text-align: center;
+}
+hr{
+  background-color: white;
+  border-style: none;
+  height: 2px;
+  width: 35%;
+}
+p{
+  text-align: center;
+  font-size: 25px;
+}
+h2{
+  text-align: center;
+}
