@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+    <style media="screen">
+
+  body {
+      text-align: center;
+      padding: 130px 60px;
+      background: #90cbf3;
+      font-family: sans-serif;
+      font-weight: lighter;
+  }
+
+  #timer {
+      font-size: 3em;
+      font-weight: 100;
+      color: white;
+      padding: 20px;
+      width: 1300px;
+      color: white;
+
+  }
+
+  #timer div {
+      display: inline-block;
+      min-width: 90px;
+      padding: 15px;
+      background: #020b43;
+      border-radius: 10px;
+      border: 2px solid #030d52;
+      margin: 15px;
+  }
+
+  #timer div span {
+      color: #ffffff;
+      display: block;
+      margin-top: 15px;
+      font-size: .35em;
+      font-weight: 400;
+  }
+
+  h1 {
+    color: red;
+  }
+    </style>
+  </head>
+
+  <body>
+  <div>
+    <h1>Time until you'll be off to Wales:</h1>
+  </div>
+  <div id="timer"></div>
+  <script type="text/javascript">
+  function updateTimer() {
+      future = Date.parse("jun 10, 2022 11:15:00");
+      now = new Date();
+      diff = future - now;
+
+      day = Math.floor(diff / (1000 * 60 * 60 * 24));
+      hours = Math.floor(diff / (1000 * 60 * 60));
+      mins = Math.floor(diff / (1000 * 60));
+      secs = Math.floor(diff / 1000);
+
+      d = day;
+      h = hours - day * 24;
+      m = mins - hours * 60;
+      s = secs - mins * 60;
+
+      document.getElementById("timer")
+          .innerHTML =
+          '<div>' + d + '<span>Days</span></div>' +
+          '<div>' + h + '<span>Hours</span></div>' +
+          '<div>' + m + '<span>Minutes</span></div>' +
+          '<div>' + s + '<span>Seconds</span></div>';
+  }
+  setInterval('updateTimer()', 1000);
+  </script>
+  <div>
+    <h1>Every second that passes gets you closer!</h1>
+  </div>
+  </body>
+  </html>
